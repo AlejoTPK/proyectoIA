@@ -36,8 +36,8 @@ export const DataTable: React.FC<DataTableProps> = ({ columns, data }) => {
               key={rowIdx}
               className={cn(
                 "transition-colors duration-150 border-b border-hairline",
-                rowIdx % 2 === 0 ? "bg-white" : "bg-[#fafafc]",
-                "hover:bg-[#f5f5f7]"
+                rowIdx % 2 === 0 ? "bg-canvas" : "bg-parchment/30",
+                "hover:bg-parchment"
               )}
             >
               {columns.map((col) => (

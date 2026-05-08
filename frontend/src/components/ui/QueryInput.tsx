@@ -35,10 +35,10 @@ export const QueryInput: React.FC<QueryInputProps> = ({
           placeholder={placeholder}
           disabled={loading}
           className={cn(
-            "w-full h-11 bg-white text-ink border border-gray-200 rounded-full px-6",
+            "w-full h-11 bg-canvas text-ink border border-hairline rounded-full px-6",
             "font-body text-[17px] tracking-[-0.374px] outline-none transition-all",
             "focus:border-[#0066cc] focus:ring-4 focus:ring-[#0066cc]/10",
-            "disabled:opacity-50 disabled:bg-gray-50"
+            "disabled:opacity-50 disabled:bg-parchment"
           )}
         />
         {loading && (

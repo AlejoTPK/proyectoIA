@@ -40,7 +40,7 @@ export const NL2SQLPage: React.FC = () => {
                 key={ex}
                 onClick={() => execute(ex)}
                 disabled={loading}
-                className="px-4 py-1.5 bg-parchment border border-hairline rounded-full text-[14px] text-ink hover:bg-white hover:shadow-sm transition-all disabled:opacity-50"
+                className="px-4 py-1.5 bg-tile-light border border-hairline rounded-full text-[14px] text-ink hover:bg-canvas hover:shadow-sm transition-all disabled:opacity-50"
               >
                 {ex}
               </button>
@@ -69,15 +69,15 @@ export const NL2SQLPage: React.FC = () => {
         {/* Results State */}
         {data && !loading && (
           <div className="space-y-8 animate-in fade-in duration-500">
-            <div className="bg-white rounded-3xl shadow-apple-product overflow-hidden border border-hairline">
-              <div className="px-6 py-4 bg-parchment border-b border-hairline">
+            <div className="bg-tile-light rounded-3xl shadow-apple-product overflow-hidden border border-hairline">
+              <div className="px-6 py-4 bg-parchment/50 border-b border-hairline">
                 <h3 className="text-[14px] font-semibold text-ink">Código SQL Generado</h3>
               </div>
               <SqlDisplay sql={data.generated_sql} />
             </div>
 
-            <div className="bg-white rounded-3xl shadow-apple-product overflow-hidden border border-hairline">
-              <div className="px-6 py-4 bg-parchment border-b border-hairline flex justify-between items-center">
+            <div className="bg-tile-light rounded-3xl shadow-apple-product overflow-hidden border border-hairline">
+              <div className="px-6 py-4 bg-parchment/50 border-b border-hairline flex justify-between items-center">
                 <h3 className="text-[14px] font-semibold text-ink">Resultados de la Consulta</h3>
                 <span className="text-[12px] text-gray-500">{data.data.length} filas encontradas</span>
               </div>

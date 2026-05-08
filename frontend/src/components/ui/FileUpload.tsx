@@ -54,8 +54,8 @@ export const FileUpload: React.FC<FileUploadProps> = ({
         className={cn(
           "relative group flex flex-col items-center justify-center gap-3 p-12 rounded-3xl border-2 border-dashed transition-all cursor-pointer text-center",
           dragging
-            ? "border-[#0066cc] bg-[#0066cc]/5 scale-[1.02]"
-            : "border-gray-200 bg-white hover:border-gray-300 hover:bg-gray-50"
+            ? "border-primary bg-primary/5 scale-[1.02]"
+            : "border-hairline bg-canvas hover:border-ink-muted hover:bg-parchment"
         )}
       >
         <div className={cn(
@@ -69,7 +69,7 @@ export const FileUpload: React.FC<FileUploadProps> = ({
           <p className="font-display text-[17px] font-semibold text-ink">
             {selectedFile ? selectedFile.name : "Subir archivos"}
           </p>
-          <p className="text-[14px] text-gray-500">
+          <p className="text-[14px] text-ink-muted">
             {selectedFile ? `${(selectedFile.size / 1024).toFixed(1)} KB` : "Arrastra un PDF o TXT aquí"}
           </p>
         </div>

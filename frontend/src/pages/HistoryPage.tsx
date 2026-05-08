@@ -73,7 +73,7 @@ export const HistoryPage: React.FC = () => {
                 className={cn(
                   "p-6 rounded-2xl border border-hairline transition-all duration-300",
                   "flex flex-col md:flex-row md:items-start gap-4",
-                  idx % 2 === 0 ? "bg-white" : "bg-[#fafafc]",
+                  idx % 2 === 0 ? "bg-tile-light" : "bg-parchment/30",
                   "hover:shadow-apple-product hover:scale-[1.01]"
                 )}
                 style={{ animationDelay: `${idx * 0.05}s` }}
@@ -92,19 +92,19 @@ export const HistoryPage: React.FC = () => {
                     {item.user_query}
                   </p>
                   {item.result_summary && (
-                    <p className="text-[14px] text-gray-500 line-clamp-2">
+                    <p className="text-[14px] text-ink-muted line-clamp-2">
                       {item.result_summary}
                     </p>
                   )}
                   {item.generated_sql && (
-                    <code className="block mt-2 text-[12px] text-[#0066cc] font-mono truncate bg-blue-50 px-2 py-1 rounded border border-blue-100">
+                    <code className="block mt-2 text-[12px] text-[#0066cc] font-mono truncate bg-primary/10 px-2 py-1 rounded border border-primary/20">
                       {item.generated_sql}
                     </code>
                   )}
                 </div>
 
                 {/* Date */}
-                <time className="text-[12px] text-gray-400 whitespace-nowrap mt-1">
+                <time className="text-[12px] text-ink-muted whitespace-nowrap mt-1">
                   {formatDate(item.created_at)}
                 </time>
               </div>
@@ -114,7 +114,7 @@ export const HistoryPage: React.FC = () => {
 
         {/* Empty State */}
         {!loading && items.length === 0 && !error && (
-          <div className="flex flex-col items-center text-center text-gray-300 py-24 bg-white rounded-3xl border border-hairline shadow-sm">
+          <div className="flex flex-col items-center text-center text-ink-muted py-24 bg-tile-light rounded-3xl border border-hairline shadow-sm">
             <div className="text-6xl mb-4">🗒️</div>
             <p className="text-[17px]">No hay consultas en el historial todavía.</p>
           </div>

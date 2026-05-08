@@ -34,7 +34,7 @@ export const KnowledgePage: React.FC = () => {
       <section className="w-full max-w-[1024px] px-6 pb-24 space-y-12">
         <div className="flex flex-col items-center text-center">
           <h2 className="text-[34px] font-semibold tracking-tight text-ink">Consulta tus documentos</h2>
-          <p className="mt-2 text-[17px] text-gray-500 max-w-[600px]">
+          <p className="mt-2 text-[17px] text-ink-muted max-w-[600px]">
             El sistema recuperará los fragmentos más relevantes para fundamentar su respuesta.
           </p>
           <div className="mt-8 w-full max-w-[640px]">
@@ -50,7 +50,7 @@ export const KnowledgePage: React.FC = () => {
         <div className="min-h-[200px]">
           {/* Error State */}
           {error && (
-            <div className="p-6 bg-red-50 border border-red-200 rounded-2xl text-red-700 text-[17px] animate-in fade-in">
+            <div className="p-6 bg-red-500/10 border border-red-500/20 rounded-2xl text-red-600 dark:text-red-400 text-[17px] animate-in fade-in">
               ⚠️ {error}
             </div>
           )}
@@ -67,8 +67,8 @@ export const KnowledgePage: React.FC = () => {
           {/* Answer State */}
           {answer && !loadingAsk && (
             <div className="max-w-[800px] mx-auto space-y-10 animate-in fade-in slide-in-from-bottom-4 duration-500">
-              <div className="bg-parchment rounded-3xl p-8 border border-hairline shadow-sm relative">
-                <div className="absolute -top-3 left-8 px-3 py-1 bg-white border border-hairline rounded-full text-[12px] font-semibold text-ink uppercase tracking-wider">
+              <div className="bg-canvas border border-hairline rounded-3xl p-8 shadow-sm relative">
+                <div className="absolute -top-3 left-8 px-3 py-1 bg-canvas border border-hairline rounded-full text-[12px] font-semibold text-ink uppercase tracking-wider">
                   Respuesta fundamentada
                 </div>
                 <p className="text-ink text-[18px] leading-relaxed font-body whitespace-pre-wrap">
@@ -79,22 +79,22 @@ export const KnowledgePage: React.FC = () => {
               {/* Sources */}
               {answer.sources.length > 0 && (
                 <div className="space-y-4">
-                  <h4 className="text-[14px] font-semibold text-gray-400 uppercase tracking-widest pl-2">
+                  <h4 className="text-[14px] font-semibold text-ink-muted uppercase tracking-widest pl-2">
                     Fuentes recuperadas ({answer.sources.length})
                   </h4>
                   <div className="grid gap-4">
                     {answer.sources.map((src, i) => (
                       <div
                         key={src.chunk_id}
-                        className="bg-white p-6 rounded-2xl border border-hairline shadow-sm hover:shadow-md transition-shadow"
+                        className="bg-tile-light p-6 rounded-2xl border border-hairline shadow-sm hover:border-ink-muted transition-colors"
                       >
                         <div className="flex items-center gap-2 mb-3">
-                          <span className="px-2 py-0.5 bg-gray-100 rounded text-[10px] font-bold text-gray-500 uppercase">
+                          <span className="px-2 py-0.5 bg-canvas border border-hairline rounded text-[10px] font-bold text-ink-muted uppercase">
                             Fragmento {i + 1}
                           </span>
-                          <span className="text-[12px] text-[#0066cc] font-medium">ID: {src.document_id}</span>
+                          <span className="text-[12px] text-blue-600 dark:text-blue-400 font-medium">ID: {src.document_id}</span>
                         </div>
-                        <p className="text-[14px] text-gray-600 italic leading-snug">
+                        <p className="text-[14px] text-ink-muted italic leading-snug">
                           "...{src.excerpt}..."
                         </p>
                       </div>
@@ -107,7 +107,7 @@ export const KnowledgePage: React.FC = () => {
 
           {/* Idle State */}
           {!answer && !loadingAsk && !error && (
-            <div className="flex flex-col items-center text-center text-gray-300 py-16">
+            <div className="flex flex-col items-center text-center text-ink-muted py-16">
               <div className="text-6xl mb-4">📖</div>
               <p className="text-[17px]">Tu conocimiento aparecerá aquí cuando hagas una pregunta.</p>
             </div>
