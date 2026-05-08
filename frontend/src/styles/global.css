@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "SF Pro Display", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: "SF Pro Text", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --color-primary: #0066cc;
+  --color-primary-focus: #0071e3;
+  
+  --color-canvas: #ffffff;
+  --color-parchment: #f5f5f7;
+  
+  --color-tile-light: #ffffff;
+  --color-tile-dark: #272729;
+  --color-tile-darker: #252527;
+  --color-black: #000000;
+  
+  --color-ink: #1d1d1f;
+  --color-ink-muted: #333333;
+  --color-ink-faint: #7a7a7a;
+  
+  --color-on-dark: #ffffff;
+  --color-on-primary: #ffffff;
+  
+  --color-border-soft: #f0f0f0;
+  --color-hairline: #e0e0e0;
+}
+
+@layer base {
+  body {
+    @apply font-body text-ink bg-canvas antialiased;
+    letter-spacing: -0.374px;
+    line-height: 1.47;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight text-ink;
+  }
+
+  .dark-surface h1, .dark-surface h2, .dark-surface h3, .dark-surface h4, .dark-surface h5, .dark-surface h6, .dark-surface p {
+    @apply text-on-dark;
+  }
+}
+
+/* Utilities para sombras específicas de Apple */
+@layer utilities {
+  .shadow-apple-product {
+    box-shadow: rgba(0, 0, 0, 0.22) 3px 5px 30px 0px;
+  }
+}
